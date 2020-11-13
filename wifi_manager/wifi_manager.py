@@ -100,6 +100,7 @@ class WifiManager:
 
         # scan what’s available
         available_networks = []
+        cls.wlan().disconnect()
         for network in cls.wlan().scan():
             ssid = network[0].decode("utf-8")
             bssid = network[1]
